@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StayNest | Greater Noida Rentals</title>
+  <meta name="description" content="Find your next home in Greater Noida. Browse verified rentals, compare terms, and contact owners directly on StayNest." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/staynest.css" />
+  <script type="module" src="/src/main.js"></script>
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+  <div id="staynest-app">
+    <!-- Navbar -->
+    <nav id="site-navbar" class="staynest-nav">
+      <div class="container">
+        <div class="nav-inner">
+          <a class="navbar-brand" href="/index.html">
+            <span class="brand-mark">StayNest</span>
+            <span class="brand-loc">Greater Noida</span>
+          </a>
+          <div class="nav-links d-none d-lg-flex">
+            <a href="/index.html" data-nav="home">Home</a>
+            <a href="/listings.html" data-nav="listings">Listings</a>
+            <a href="/contact.html" data-nav="contact">Contact</a>
+          </div>
+          <div class="nav-actions" id="nav-actions">
+            <a href="/login.html" class="btn btn-outline-navy btn-sm">Log in</a>
+            <a href="/signup.html" class="btn btn-navy btn-sm">Sign up</a>
+          </div>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">StayNest Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mobile-links">
+            <a href="/index.html" data-nav="home">Home</a>
+            <a href="/listings.html" data-nav="listings">Listings</a>
+            <a href="/contact.html" data-nav="contact">Contact</a>
+          </div>
+          <hr>
+          <div id="mobile-auth-area"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow">Greater Noida's rental marketplace</p>
+        <h1 class="hero-title">Find a place that feels<br>like <em>home</em>.</h1>
+        <p class="hero-subtitle">Browse verified rentals, compare terms, and contact owners directly — no broker fee, no middlemen.</p>
+        <form class="hero-search" onsubmit="return staynest.search(event)">
+          <div class="search-bar">
+            <i class="bi bi-geo-alt"></i>
+            <input type="text" id="hero-search-input" placeholder="Search by locality, e.g. Knowledge Park, Pari Chowk" />
+          </div>
+          <button class="btn btn-navy btn-lg" type="submit">Search homes</button>
+        </form>
+        <div class="hero-stats">
+          <div><strong id="stat-listings">120+</strong><span>Verified listings</span></div>
+          <div><strong>18</strong><span>Localities</span></div>
+          <div><strong>0%</strong><span>Broker fee</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured listings preview -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Featured homes</h2>
+            <p class="section-subtitle">Hand-picked rentals across Greater Noida</p>
+          </div>
+          <a href="/listings.html" class="btn btn-outline-navy">View all listings</a>
+        </div>
+        <div class="row g-4" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- Why StayNest -->
+    <section class="section section-cream">
+      <div class="container">
+        <h2 class="section-title text-center">Why families choose StayNest</h2>
+        <p class="section-subtitle text-center">We built the cleanest way to rent in Greater Noida</p>
+        <div class="row g-4 mt-2">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+              <h3>Verified owners</h3>
+              <p>Every listing is posted by a verified property owner. No anonymous brokers, no surprises.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-cash-coin"></i></div>
+              <h3>Zero broker fee</h3>
+              <p>Speak directly to the owner and agree on terms. We never charge a middleman fee.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="bi bi-heart"></i></div>
+              <h3>Save favorites</h3>
+              <p>Shortlist homes, compare them side-by-side, and revisit them anytime from your account.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-navy">
+      <div class="container text-center">
+        <h2 class="cta-title">Have a property to list?</h2>
+        <p class="cta-subtitle">Reach verified tenants across Greater Noida in minutes.</p>
+        <a href="/signup.html" class="btn btn-cream btn-lg">Create an owner account</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="staynest-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-5">
+            <span class="brand-mark">StayNest</span>
+            <p class="footer-tag">Greater Noida's rental marketplace. Find homes, contact owners, move in without the broker fee.</p>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6>Explore</h6>
+            <a href="/index.html">Home</a>
+            <a href="/listings.html">Listings</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+          <div class="col-6 col-md-4">
+            <h6>Account</h6>
+            <a href="/login.html">Log in</a>
+            <a href="/signup.html">Sign up</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 StayNest. Made for Greater Noida.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/src/pages/home.js"></script>
+</body>
+</html>

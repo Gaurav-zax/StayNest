@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | StayNest</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/staynest.css" />
+</head>
+<body>
+  <div id="staynest-app">
+    <nav id="site-navbar" class="staynest-nav">
+      <div class="container">
+        <div class="nav-inner">
+          <a class="navbar-brand" href="/index.html">
+            <span class="brand-mark">StayNest</span>
+            <span class="brand-loc">Greater Noida</span>
+          </a>
+          <div class="nav-links d-none d-lg-flex">
+            <a href="/index.html" data-nav="home">Home</a>
+            <a href="/listings.html" data-nav="listings">Listings</a>
+            <a href="/contact.html" data-nav="contact">Contact</a>
+          </div>
+          <div class="nav-actions" id="nav-actions">
+            <a href="/login.html" class="btn btn-outline-navy btn-sm">Log in</a>
+            <a href="/signup.html" class="btn btn-navy btn-sm">Sign up</a>
+          </div>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">StayNest Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mobile-links">
+            <a href="/index.html" data-nav="home">Home</a>
+            <a href="/listings.html" data-nav="listings">Listings</a>
+            <a href="/contact.html" data-nav="contact">Contact</a>
+          </div>
+          <hr><div id="mobile-auth-area"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="auth-wrap">
+      <div class="auth-card wide">
+        <div class="auth-head">
+          <div class="brand-mini">
+            <span class="dot"></span>
+            <span class="brand-mark" style="font-size:1.2rem;">StayNest</span>
+          </div>
+          <h1>Create your StayNest account</h1>
+          <p>Join Greater Noida's rental marketplace — it takes less than a minute.</p>
+        </div>
+
+        <div class="alert app-alert" id="alert-box" role="alert"></div>
+
+        <form id="signup-form" novalidate>
+          <input type="hidden" name="role" id="role-input" value="Tenant" />
+
+          <div class="role-toggle">
+            <div class="role-pill active" data-role="Tenant">
+              <i class="bi bi-house-door"></i>
+              <strong>I'm looking for a home</strong>
+              <small>Tenant</small>
+            </div>
+            <div class="role-pill" data-role="Property Owner">
+              <i class="bi bi-building"></i>
+              <strong>I want to list my property</strong>
+              <small>Owner</small>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" required minlength="2" />
+            <div class="invalid-feedback">Please enter your full name (at least 2 characters).</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required />
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="phone">Mobile Number</label>
+            <div class="input-group">
+              <span class="input-group-text">+91</span>
+              <input type="tel" class="form-control" id="phone" name="phone" pattern="[6-9][0-9]{9}" required maxlength="10" inputmode="numeric" />
+              <div class="invalid-feedback">Enter a 10-digit Indian mobile number starting with 6-9.</div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="password">Password</label>
+              <div class="input-wrap">
+                <input type="password" class="form-control" id="password" name="password" required minlength="8" />
+                <button type="button" class="toggle-eye" data-target="password"><i class="bi bi-eye"></i></button>
+              </div>
+              <div class="invalid-feedback">Password must be at least 8 characters with one letter and one number.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="confirmPassword">Confirm Password</label>
+              <div class="input-wrap">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required />
+                <button type="button" class="toggle-eye" data-target="confirmPassword"><i class="bi bi-eye"></i></button>
+              </div>
+              <div class="invalid-feedback">Passwords must match.</div>
+            </div>
+          </div>
+
+          <div class="mb-3 terms-row">
+            <input class="form-check-input mt-1" type="checkbox" id="terms" required />
+            <label for="terms">I agree to StayNest's <a href="#" style="font-weight:600;">Terms &amp; Conditions</a> and <a href="#" style="font-weight:600;">Privacy Policy</a>.</label>
+            <div class="invalid-feedback d-block" id="terms-error" style="display:none!important;">You must accept the terms to continue.</div>
+          </div>
+
+          <button type="submit" class="btn btn-navy btn-lg w-100" id="submit-btn">
+            Create account
+          </button>
+        </form>
+
+        <p class="auth-footer-link">Already have an account? <a href="/login.html">Log in</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/pages/signup.js"></script>
+</body>
+</html>

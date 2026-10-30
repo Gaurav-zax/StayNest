@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In | StayNest</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/staynest.css" />
+</head>
+<body>
+  <div id="staynest-app">
+    <nav id="site-navbar" class="staynest-nav">
+      <div class="container">
+        <div class="nav-inner">
+          <a class="navbar-brand" href="/index.html">
+            <span class="brand-mark">StayNest</span>
+            <span class="brand-loc">Greater Noida</span>
+          </a>
+          <div class="nav-links d-none d-lg-flex">
+            <a href="/index.html" data-nav="home">Home</a>
+            <a href="/listings.html" data-nav="listings">Listings</a>
+            <a href="/contact.html" data-nav="contact">Contact</a>
+          </div>
+          <div class="nav-actions" id="nav-actions">
+            <a href="/login.html" class="btn btn-outline-navy btn-sm">Log in</a>
+            <a href="/signup.html" class="btn btn-navy btn-sm">Sign up</a>
+          </div>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">StayNest Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mobile-links">
+            <a href="/index.html" data-nav="home">Home</a>
+            <a href="/listings.html" data-nav="listings">Listings</a>
+            <a href="/contact.html" data-nav="contact">Contact</a>
+          </div>
+          <hr><div id="mobile-auth-area"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="auth-head">
+          <div class="brand-mini">
+            <span class="dot"></span>
+            <span class="brand-mark" style="font-size:1.2rem;">StayNest</span>
+          </div>
+          <h1>Welcome back to StayNest</h1>
+          <p>Log in to contact verified owners and save your favorite properties in Greater Noida.</p>
+        </div>
+
+        <div class="alert app-alert" id="alert-box" role="alert"></div>
+
+        <form id="login-form" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required />
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <div class="input-wrap">
+              <input type="password" class="form-control" id="password" name="password" required />
+              <button type="button" class="toggle-eye" data-target="password"><i class="bi bi-eye"></i></button>
+            </div>
+            <div class="invalid-feedback">Please enter your password.</div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remember" />
+              <label class="form-check-label" for="remember">Remember me</label>
+            </div>
+            <a href="#" id="forgot-link" style="font-size:.9rem;font-weight:600;">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-navy btn-lg w-100" id="submit-btn">
+            Log in
+          </button>
+        </form>
+
+        <div class="demo-login">
+          <button id="demo-tenant"><i class="bi bi-person"></i> Fill Demo Tenant</button>
+          <button id="demo-owner"><i class="bi bi-building"></i> Fill Demo Owner</button>
+        </div>
+
+        <p class="auth-footer-link">New to StayNest? <a href="/signup.html">Create an account</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/pages/login.js"></script>
+</body>
+</html>
