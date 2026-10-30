@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node node_modules/vite/bin/vite.js",
-    "build": "node node_modules/vite/bin/vite.js build",
-    "preview": "node node_modules/vite/bin/vite.js preview",
+    "dev": "pnpm exec vite",
+    "build": "pnpm exec vite build",
+    "preview": "pnpm exec vite preview",
     "seed": "node scripts/seed.mjs"
   },
   "dependencies": {
